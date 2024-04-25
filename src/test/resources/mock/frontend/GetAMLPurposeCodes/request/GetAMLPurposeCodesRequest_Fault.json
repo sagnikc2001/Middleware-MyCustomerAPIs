@@ -1,0 +1,7 @@
+{
+  "GetAMLPurposeCodesRequest": {
+    "channelId": "Channel124",
+    "transactionType": "Transfer",
+    "customerType": "Individual"
+  }
+}

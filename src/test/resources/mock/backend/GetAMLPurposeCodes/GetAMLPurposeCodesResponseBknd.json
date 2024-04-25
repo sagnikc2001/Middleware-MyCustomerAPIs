@@ -1,0 +1,42 @@
+{
+    "GetAMLPurposeCodesResponse": {
+        "record": [
+            {
+                "SR_NO": "7",
+                "CHANNEL_ID": "Channel123",
+                "TRANS_TYPE": "Transfer",
+                "CUSTOMER_TYPE": "Individual",
+                "CATEGORY": "Category12",
+                "CATEGORY_EN": "Category1 English1",
+                "CATEGORY_AR": "06450630062d06280627",
+                "PURPOSE_TRAN": "Purpose11",
+                "PURPOSE_TRAN_EN": "Purpose1 English1",
+                "PURPOSE_TRAN_AR": "0635062006310628",
+                "SEC_PUR_TRAN": "Secondary Purpose11",
+                "SEC_PUR_TRAN_EN": "Secondary Purpose1 English1",
+                "SEC_PUR_TRAN_AR": "0635062006440645061",
+                "RELATIONSHIP": "Relationship11",
+                "RELATIONSHIP_EN": "Relationship1 English1",
+                "RELATIONSHIP_AR": "063506300628064a"
+            },
+            {
+                "SR_NO": "6",
+                "CHANNEL_ID": "Channel123",
+                "TRANS_TYPE": "Transfer",
+                "CUSTOMER_TYPE": "Individual",
+                "CATEGORY": "Category12",
+                "CATEGORY_EN": "Category1 English1",
+                "CATEGORY_AR": "1577",
+                "PURPOSE_TRAN": "Purpose11",
+                "PURPOSE_TRAN_EN": "Purpose1 English1",
+                "PURPOSE_TRAN_AR": "1601",
+                "SEC_PUR_TRAN": "Secondary Purpose11",
+                "SEC_PUR_TRAN_EN": "Secondary Purpose1 English1",
+                "SEC_PUR_TRAN_AR": "1599",
+                "RELATIONSHIP": "Relationship11",
+                "RELATIONSHIP_EN": "Relationship1 English1",
+                "RELATIONSHIP_AR": "1599"
+            }
+        ]
+    }
+}

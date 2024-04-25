@@ -1,0 +1,12 @@
+{
+	"GetCustomerPFAResponse": {
+		"success": {
+			"CURRENTBALANCE": "1",
+			"BALANCEAVERAGEMONTHLY": "1",
+			"BALANCEAVERAGESIXMONTH": "1",
+			"INVESTMENTBALANCE": "1",
+			"KHAYRATBALANCE": "1",
+			"PFA": "1"
+		}
+	}
+}

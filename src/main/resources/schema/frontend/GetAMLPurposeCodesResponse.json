@@ -1,0 +1,25 @@
+{
+  "GetAMLPurposeCodesResponse": {
+    "success": {
+      "record": [
+        {
+          "channelId": "string",
+          "transactionType": "string",
+          "customerType": "string",
+          "category": "string",
+          "categoryDescEn": "string",
+          "categoryDescAr": "string",
+          "purposeCode": "string",
+          "purposeCodeDescEn": "string",
+          "purposeCodeDescAr": "string",
+          "secondLevelPurposeCode": "string",
+          "secondLevelPurposeCodeDescEn": "string",
+          "secondLevelPurposeCodeDescAr": "string",
+          "relationship": "string",
+          "relationshipDescEn": "string",
+          "relationshipDescAr": "string"
+        }
+      ]
+    }
+  }
+}

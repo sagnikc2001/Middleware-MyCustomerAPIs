@@ -1,0 +1,7 @@
+{
+  "GetAMLPurposeCodesRequest": {
+    "channelId": "string",
+    "transactionType": "string",
+    "customerType": "string"
+  }
+}
