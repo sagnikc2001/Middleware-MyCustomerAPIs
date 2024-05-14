@@ -1,5 +1,5 @@
 
-package com.alahli.middleware.customer.models.backends;
+package com.alahli.middleware.customer.models.backends.ods;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

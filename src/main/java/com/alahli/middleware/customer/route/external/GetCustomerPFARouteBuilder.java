@@ -1,14 +1,12 @@
 package com.alahli.middleware.customer.route.external;
 
-import org.apache.camel.Exchange;
-import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
 import org.springframework.stereotype.Component;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
 import com.alahli.middleware.customer.models.GetCustomerPFA;
-import com.alahli.middleware.customer.models.backends.GetCustomerPFARequestBackend;
+import com.alahli.middleware.customer.models.backends.ods.GetCustomerPFARequestBackend;
 
 @Component
 public class GetCustomerPFARouteBuilder extends RouteBuilder{
@@ -27,27 +25,27 @@ public class GetCustomerPFARouteBuilder extends RouteBuilder{
 		.to("direct:GetCustomerPFA")
 		.outType(GetCustomerPFA.class);
 		
-		onException(Exception.class) 
-		.log("inside exception")
-		.to("bean:utils?method=onException(${exchange},\"GetCustomerPFAResponse\",\"MW\")")
-		.log("Exception"+"${exception}").handled(true)
-		.setHeader(Exchange.HTTP_RESPONSE_CODE, constant(500));
+		onException(Exception.class)
+		.to("bean:oUtils?method=onException(${exchange},\"GetCustomerPFAResponse\",${header.system})")
+		.handled(true);
 		
 		from("direct:GetCustomerPFA").routeId("GetCustomerPFA")
+		.setHeader("system",constant("MW"))
 		.to("bean:getCustomerPFAService?method=setGetCustomerPFARequestIn")
 		.to("bean:getCustomerPFAService?method=prepareGetCustomerPFARequestBackend")
 		.choice()
 		.when().simple("${body.getGetCustomerPFARequest.getShortCIF.length()} != 8")
-			.to("bean:utils?method=prepareFaultNodeStr(\"GetCustomerPFAResponse\",\"INCORRECTVALUE\",\"shortCIF length not equal to 8\",\"\",\"\",\"validationsCust\",${exchange})")
+			.to("bean:oUtils?method=prepareFaultNodeStr(\"GetCustomerPFAResponse\",\"INCORRECTVALUE\",\"shortCIF length not equal to 8\",\"\",\"\",\"validationsCust\",${exchange})")
 		.otherwise()
 			.marshal(new JacksonDataFormat(GetCustomerPFARequestBackend.class))
+			.setHeader("system",constant("ODS"))
 			.to("{{ODSDBConnector.host}}{{ODSDBConnector.contextPath}}"+"/v1/CallProcedureToGetPFADetails?bridgeEndpoint=true")
 			.choice()
 				.when().jsonpath("$.GetCustomerPFAResponse[?(@.success != null && @.success.size()>0)]")
 					.to("bean:getCustomerPFAService?method=prepareGetCustomerPFAFinalResponse")
 					.setHeader("Content-Type", constant("application/json"))
 				.otherwise()
-					.to("bean:utils?method=prepareFaultNodeStr(\"GetCustomerPFAResponse\",\"RECORDNOTFOUND_ODS\",\"\",\"\",\"\",\"sysOrAppWithoutBkndError\",${exchange})");
+					.to("bean:oUtils?method=prepareFaultNodeStr(\"GetCustomerPFAResponse\",\"RECORDNOTFOUND_ODS\",\"\",\"\",\"\",\"sysOrAppWithoutBkndError\",${exchange})");
 	}
 
 	

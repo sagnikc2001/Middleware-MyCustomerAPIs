@@ -24,8 +24,7 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.alahli.middleware.customer.models.GetAMLPurposeCodesRequestType;
-import com.alahli.middleware.customer.models.GetAMLPurposeCodesResponseType;
+import com.alahli.middleware.customer.models.GetAMLPurposeCodes;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
@@ -97,20 +96,20 @@ public class GetAMLPurposeCodesTest {
 
 		camelContext.start();
 
-		GetAMLPurposeCodesRequestType oGetAMLPurposeCodesRequestType = objectMapper.readValue(getAMLPurposeCodesRequest,
-				GetAMLPurposeCodesRequestType.class);
+		GetAMLPurposeCodes oGetAMLPurposeCodesRequest = objectMapper.readValue(getAMLPurposeCodesRequest,
+				GetAMLPurposeCodes.class);
 
 		Map<String, Object> headers = new HashMap<String, Object>();
 		headers.put("ServiceHeader", "{\"channelId\":\"5\",\"branchId\":\"00880\",\"tellerId\":\"\"}");
 
-		GetAMLPurposeCodesResponseType oGetAMLPurposeCodesResponseType = producerTemplate.requestBodyAndHeaders(
-				"direct:invokeGetAMLPurposeCodes", oGetAMLPurposeCodesRequestType, headers,
-				GetAMLPurposeCodesResponseType.class);
+		GetAMLPurposeCodes oGetAMLPurposeCodesResponse = producerTemplate.requestBodyAndHeaders(
+				"direct:invokeGetAMLPurposeCodes", oGetAMLPurposeCodesRequest, headers,
+				GetAMLPurposeCodes.class);
 
-		System.out.println("Response" + oGetAMLPurposeCodesResponseType.getGetAMLPurposeCodesResponse().getSuccess()
+		System.out.println("Response" + oGetAMLPurposeCodesResponse.getGetAMLPurposeCodesResponse().getSuccess()
 				.getRecord().get(0).getCategory());
 
-		Assertions.assertTrue(null != oGetAMLPurposeCodesResponseType.getGetAMLPurposeCodesResponse().getSuccess()
+		Assertions.assertTrue(null != oGetAMLPurposeCodesResponse.getGetAMLPurposeCodesResponse().getSuccess()
 				.getRecord().get(0).getCategory());
 
 	}
@@ -150,14 +149,14 @@ public class GetAMLPurposeCodesTest {
 
 		camelContext.start();
 
-		GetAMLPurposeCodesRequestType oGetAMLPurposeCodesRequestType = objectMapper.readValue(getAMLPurposeCodesRequest,
-				GetAMLPurposeCodesRequestType.class);
+		GetAMLPurposeCodes oGetAMLPurposeCodesRequest = objectMapper.readValue(getAMLPurposeCodesRequest,
+				GetAMLPurposeCodes.class);
 		
 		Map<String, Object> headers = new HashMap<String, Object>();
 		headers.put("ServiceHeader", "{\"channelId\":\"5\",\"branchId\":\"00880\",\"tellerId\":\"\"}");
 
 		String faultResponse = producerTemplate.requestBodyAndHeaders("direct:invokeGetAMLPurposeCodes",
-				oGetAMLPurposeCodesRequestType, headers, String.class);
+				oGetAMLPurposeCodesRequest, headers, String.class);
 		
 		System.out.println(faultResponse);
 

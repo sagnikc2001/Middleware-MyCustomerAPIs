@@ -8,13 +8,13 @@ import org.apache.camel.Header;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.alahli.middleware.customer.models.GetAMLPurposeCodes;
 import com.alahli.middleware.customer.models.GetAMLPurposeCodesRequest;
-import com.alahli.middleware.customer.models.GetAMLPurposeCodesRequestType;
 import com.alahli.middleware.customer.models.GetAMLPurposeCodesResponse;
-import com.alahli.middleware.customer.models.GetAMLPurposeCodesResponseType;
 import com.alahli.middleware.customer.models.ServiceHeader;
 import com.alahli.middleware.customer.models.Success;
-import com.alahli.middleware.customer.models.backends.GetAMLPurposeCodesRequestBackendType;
+import com.alahli.middleware.customer.models.backends.bancs.GetAMLPurposeCodesRequestBackendType;
+import com.alahli.middleware.utility.Utils.StringUtil;
 import com.alahli.middleware.customer.models.Record;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,6 +24,9 @@ public class GetAMLPurposeCodesService {
 
 	@Autowired
 	ObjectMapper objectMapper;
+	
+	@Autowired
+	StringUtil oStringUtil;
 
 	// storing incoming GetAMLPurposeCodesRequest data
 	private GetAMLPurposeCodesRequest oGetAMLPurposeCodesRequest;
@@ -37,11 +40,11 @@ public class GetAMLPurposeCodesService {
 	 * @param serviceHeader
 	 * @throws Exception
 	 */
-	public void setGetAMLPurposeCodesRequest(GetAMLPurposeCodesRequestType getAMLPurposeCodesRequestType,
+	public void setGetAMLPurposeCodesRequest(GetAMLPurposeCodes getAMLPurposeCodes,
 			@Header("ServiceHeader") String serviceHeader) throws Exception {
 
 		this.oServiceHeader = objectMapper.readValue(serviceHeader, ServiceHeader.class);
-		this.oGetAMLPurposeCodesRequest = getAMLPurposeCodesRequestType.getGetAMLPurposeCodesRequest();
+		this.oGetAMLPurposeCodesRequest = getAMLPurposeCodes.getGetAMLPurposeCodesRequest();
 	}
 
 	/**
@@ -54,13 +57,13 @@ public class GetAMLPurposeCodesService {
 
 		GetAMLPurposeCodesRequestBackendType oGetAMLPurposeCodesRequestBackendType = new GetAMLPurposeCodesRequestBackendType();
 
-		com.alahli.middleware.customer.models.backends.GetAMLPurposeCodesRequest oGetAMLPurposeCodesRequestBackend = new com.alahli.middleware.customer.models.backends.GetAMLPurposeCodesRequest();
+		com.alahli.middleware.customer.models.backends.bancs.GetAMLPurposeCodesRequest oGetAMLPurposeCodesRequestBackend = new com.alahli.middleware.customer.models.backends.bancs.GetAMLPurposeCodesRequest();
 
 		oGetAMLPurposeCodesRequestBackendType.setGetAMLPurposeCodesRequestBackend(oGetAMLPurposeCodesRequestBackend);
 
-		oGetAMLPurposeCodesRequestBackend.setChannelId(oGetAMLPurposeCodesRequest.getChannelId());
-		oGetAMLPurposeCodesRequestBackend.setCustomerType(oGetAMLPurposeCodesRequest.getCustomerType());
-		oGetAMLPurposeCodesRequestBackend.setTransactionType(oGetAMLPurposeCodesRequest.getTransactionType());
+		oGetAMLPurposeCodesRequestBackend.setChannelId(oStringUtil.setDefaultValue(oGetAMLPurposeCodesRequest.getChannelId(),""));
+		oGetAMLPurposeCodesRequestBackend.setCustomerType(oStringUtil.setDefaultValue(oGetAMLPurposeCodesRequest.getCustomerType(),""));
+		oGetAMLPurposeCodesRequestBackend.setTransactionType(oStringUtil.setDefaultValue(oGetAMLPurposeCodesRequest.getTransactionType(),""));
 
 		return oGetAMLPurposeCodesRequestBackendType;
 	}
@@ -72,7 +75,7 @@ public class GetAMLPurposeCodesService {
 	 * @return JsonNode for the AMLPurposeCodes Response
 	 * @throws Exception
 	 */
-	public GetAMLPurposeCodesResponseType prepareGetAMLPurposeCodesFinalResponse(Exchange ex) throws Exception {
+	public GetAMLPurposeCodes prepareGetAMLPurposeCodesFinalResponse(Exchange ex) throws Exception {
 
 		JsonNode oGetAMLPurposeCodesResponseNode = objectMapper.readTree(ex.getIn().getBody(String.class));
 
@@ -80,12 +83,12 @@ public class GetAMLPurposeCodesService {
 
 		JsonNode orecordArrayNode = oGetAMLPurposeCodesResponse.get("record");
 
-		GetAMLPurposeCodesResponseType oGetAMLPurposeCodesResponseType = new GetAMLPurposeCodesResponseType();
+		GetAMLPurposeCodes oGetAMLPurposeCodes = new GetAMLPurposeCodes();
 		GetAMLPurposeCodesResponse getAMLPurposeCodesResponse = new GetAMLPurposeCodesResponse();
 		Success oSuccess = new Success();
 		List<Record> oRecordList = new ArrayList<Record>();
 
-		oGetAMLPurposeCodesResponseType.setGetAMLPurposeCodesResponse(getAMLPurposeCodesResponse);
+		oGetAMLPurposeCodes.setGetAMLPurposeCodesResponse(getAMLPurposeCodesResponse);
 		getAMLPurposeCodesResponse.setSuccess(oSuccess);
 		oSuccess.setRecord(oRecordList);
 
@@ -118,7 +121,7 @@ public class GetAMLPurposeCodesService {
 			}
 		}
 
-		return oGetAMLPurposeCodesResponseType;
+		return oGetAMLPurposeCodes;
 	}
 
 	/**

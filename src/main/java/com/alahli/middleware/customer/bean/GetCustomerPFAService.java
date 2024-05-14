@@ -10,7 +10,7 @@ import com.alahli.middleware.customer.models.GetCustomerPFARequest;
 import com.alahli.middleware.customer.models.GetCustomerPFAResponse;
 import com.alahli.middleware.customer.models.ServiceHeader;
 import com.alahli.middleware.customer.models.SuccessPFA;
-import com.alahli.middleware.customer.models.backends.GetCustomerPFARequestBackend;
+import com.alahli.middleware.customer.models.backends.ods.GetCustomerPFARequestBackend;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -47,7 +47,7 @@ public class GetCustomerPFAService {
 	 */
 	public GetCustomerPFARequestBackend prepareGetCustomerPFARequestBackend() throws Exception{
 		
-		com.alahli.middleware.customer.models.backends.GetCustomerPFARequest oGetCustomerPFARequest = new com.alahli.middleware.customer.models.backends.GetCustomerPFARequest();
+		com.alahli.middleware.customer.models.backends.ods.GetCustomerPFARequest oGetCustomerPFARequest = new com.alahli.middleware.customer.models.backends.ods.GetCustomerPFARequest();
 		GetCustomerPFARequestBackend oGetCustomerPFARequestBackend = new GetCustomerPFARequestBackend();
 		
 		oGetCustomerPFARequestBackend.setGetCustomerPFARequest(oGetCustomerPFARequest);
