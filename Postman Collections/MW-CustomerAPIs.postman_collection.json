@@ -1,0 +1,689 @@
+{
+	"info": {
+		"_postman_id": "12906fc7-d6be-4698-881c-43b2a938f08b",
+		"name": "MW-CustomerAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29365190"
+	},
+	"item": [
+		{
+			"name": "GetAMLPurposeCodes",
+			"item": [
+				{
+					"name": "GetAMLPurposeCodes_Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "ServiceHeader",
+								"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"GetAMLPurposeCodesRequest\": {\r\n    \"channelId\": \"Channel123\",\r\n    \"transactionType\": \"Transfer\",\r\n    \"customerType\": \"Individual\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/v1/GetAMLPurposeCodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"v1",
+								"GetAMLPurposeCodes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetAMLPurposeCodes_Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ServiceHeader",
+										"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"GetAMLPurposeCodesRequest\": {\r\n    \"channelId\": \"Channel123\",\r\n    \"transactionType\": \"Transfer\",\r\n    \"customerType\": \"Individual\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/v1/GetAMLPurposeCodes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"v1",
+										"GetAMLPurposeCodes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "accept",
+									"value": "*/*"
+								},
+								{
+									"key": "accept-encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "beanpath",
+									"value": "com.alahli.middleware.customer.dao.BANCSDBConnectorImplDao"
+								},
+								{
+									"key": "operation",
+									"value": "BancsAMLPurposeCodeStoreProcedure"
+								},
+								{
+									"key": "postman-token",
+									"value": "403c4dc3-7c6b-4128-ac1e-8ab5051635ea"
+								},
+								{
+									"key": "serviceheader",
+									"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}"
+								},
+								{
+									"key": "system",
+									"value": "BANCS"
+								},
+								{
+									"key": "user-agent",
+									"value": "PostmanRuntime/7.37.3"
+								},
+								{
+									"key": "version",
+									"value": "v1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 08:20:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"GetAMLPurposeCodesResponse\": {\n        \"success\": {\n            \"record\": [\n                {\n                    \"channelId\": \"Channel123\",\n                    \"transactionType\": \"Transfer\",\n                    \"customerType\": \"Individual\",\n                    \"category\": \"Category12\",\n                    \"categoryDescEn\": \"Category1 English1\",\n                    \"categoryDescAr\": \"E0-('\",\n                    \"purposeCode\": \"Purpose11\",\n                    \"purposeCodeDescEn\": \"Purpose1 English1\",\n                    \"purposeCodeDescAr\": \"5 1(\",\n                    \"secondLevelPurposeCode\": \"Secondary Purpose11\",\n                    \"secondLevelPurposeCodeDescEn\": \"Secondary Purpose1 English1\",\n                    \"secondLevelPurposeCodeDescAr\": \"5 DE\",\n                    \"relationship\": \"Relationship11\",\n                    \"relationshipDescEn\": \"Relationship1 English1\",\n                    \"relationshipDescAr\": \"50(J\"\n                },\n                {\n                    \"channelId\": \"Channel123\",\n                    \"transactionType\": \"Transfer\",\n                    \"customerType\": \"Individual\",\n                    \"category\": \"Category12\",\n                    \"categoryDescEn\": \"Category1 English1\",\n                    \"categoryDescAr\": \"\\u0015w\",\n                    \"purposeCode\": \"Purpose11\",\n                    \"purposeCodeDescEn\": \"Purpose1 English1\",\n                    \"purposeCodeDescAr\": \"\\u0016\",\n                    \"secondLevelPurposeCode\": \"Secondary Purpose11\",\n                    \"secondLevelPurposeCodeDescEn\": \"Secondary Purpose1 English1\",\n                    \"secondLevelPurposeCodeDescAr\": \"\\u0015\\u0099\",\n                    \"relationship\": \"Relationship11\",\n                    \"relationshipDescEn\": \"Relationship1 English1\",\n                    \"relationshipDescAr\": \"\\u0015\\u0099\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetAMLPurposeCodes_Fault",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "ServiceHeader",
+								"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"GetAMLPurposeCodesRequest\": {\r\n    \"channelId\": \"Channel124\",\r\n    \"transactionType\": \"Transfer\",\r\n    \"customerType\": \"Individual\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/v1/GetAMLPurposeCodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"v1",
+								"GetAMLPurposeCodes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetAMLPurposeCodes_Fault",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ServiceHeader",
+										"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"GetAMLPurposeCodesRequest\": {\r\n    \"channelId\": \"Channel124\",\r\n    \"transactionType\": \"Transfer\",\r\n    \"customerType\": \"Individual\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/v1/GetAMLPurposeCodes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"v1",
+										"GetAMLPurposeCodes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "accept",
+									"value": "*/*"
+								},
+								{
+									"key": "accept-encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "beanpath",
+									"value": "com.alahli.middleware.customer.dao.BANCSDBConnectorImplDao"
+								},
+								{
+									"key": "operation",
+									"value": "BancsAMLPurposeCodeStoreProcedure"
+								},
+								{
+									"key": "postman-token",
+									"value": "4294dff6-0257-486c-9566-261968297351"
+								},
+								{
+									"key": "serviceheader",
+									"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}"
+								},
+								{
+									"key": "system",
+									"value": "BANCS"
+								},
+								{
+									"key": "user-agent",
+									"value": "PostmanRuntime/7.37.3"
+								},
+								{
+									"key": "version",
+									"value": "v1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 08:24:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"GetAMLPurposeCodesResponse\": {\n        \"fault\": {\n            \"number\": 30,\n            \"description\": \"Record not found\",\n            \"system\": \"MW\",\n            \"nativeError\": \"\",\n            \"nativeDescription\": \"\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GetCustomerPFA",
+			"item": [
+				{
+					"name": "GetCustomerPFA_Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "ServiceHeader",
+								"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"GetCustomerPFARequest\": {\r\n    \"shortCIF\": \"12345678\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/v1/GetCustomerPFA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"v1",
+								"GetCustomerPFA"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCustomerPFA_Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ServiceHeader",
+										"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"GetCustomerPFARequest\": {\r\n    \"shortCIF\": \"12345678\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/v1/GetCustomerPFA",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"v1",
+										"GetCustomerPFA"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "accept",
+									"value": "*/*"
+								},
+								{
+									"key": "accept-encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "beanpath",
+									"value": "com.alahli.middleware.customer.dao.ODSDBConnectorImplDao"
+								},
+								{
+									"key": "operation",
+									"value": "CallProcedureToGetPFADetails"
+								},
+								{
+									"key": "postman-token",
+									"value": "861fa799-397d-4703-9679-d470bd517764"
+								},
+								{
+									"key": "serviceheader",
+									"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}"
+								},
+								{
+									"key": "system",
+									"value": "ODS"
+								},
+								{
+									"key": "user-agent",
+									"value": "PostmanRuntime/7.37.3"
+								},
+								{
+									"key": "version",
+									"value": "v1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 08:29:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"GetCustomerPFAResponse\": {\n        \"success\": {\n            \"currentBalance\": 1,\n            \"balanceAverageMonthly\": 1,\n            \"balanceAverageSixMonth\": 1,\n            \"investmentBalance\": 1,\n            \"khayratBalance\": 1,\n            \"PFA\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetCustomerPFA_Fault",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "ServiceHeader",
+								"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"GetCustomerPFARequest\": {\r\n    \"shortCIF\": \"12345679\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/v1/GetCustomerPFA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"v1",
+								"GetCustomerPFA"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCustomerPFA_Fault",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ServiceHeader",
+										"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"GetCustomerPFARequest\": {\r\n    \"shortCIF\": \"12345679\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/v1/GetCustomerPFA",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"v1",
+										"GetCustomerPFA"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "accept",
+									"value": "*/*"
+								},
+								{
+									"key": "accept-encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "beanpath",
+									"value": "com.alahli.middleware.customer.dao.ODSDBConnectorImplDao"
+								},
+								{
+									"key": "operation",
+									"value": "CallProcedureToGetPFADetails"
+								},
+								{
+									"key": "postman-token",
+									"value": "47132f18-c43c-4def-83b6-c3f5f9b9e4c1"
+								},
+								{
+									"key": "serviceheader",
+									"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}"
+								},
+								{
+									"key": "system",
+									"value": "ODS"
+								},
+								{
+									"key": "user-agent",
+									"value": "PostmanRuntime/7.37.3"
+								},
+								{
+									"key": "version",
+									"value": "v1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 08:31:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"GetCustomerPFAResponse\": {\n        \"fault\": {\n            \"number\": 30,\n            \"description\": \"Record not found\",\n            \"system\": \"ODS\",\n            \"nativeError\": \"\",\n            \"nativeDescription\": \"\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetCustomerPFA_ShortCIF_Validation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "ServiceHeader",
+								"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"GetCustomerPFARequest\": {\r\n    \"shortCIF\": \"1234567\"\r\n  }\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/v1/GetCustomerPFA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"v1",
+								"GetCustomerPFA"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCustomerPFA_ShortCIF_Validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ServiceHeader",
+										"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"GetCustomerPFARequest\": {\r\n    \"shortCIF\": \"1234567\"\r\n  }\r\n} \r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/v1/GetCustomerPFA",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"v1",
+										"GetCustomerPFA"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "accept",
+									"value": "*/*"
+								},
+								{
+									"key": "accept-encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "postman-token",
+									"value": "3c9b12e3-bf49-43c7-b5ec-3836e259bea7"
+								},
+								{
+									"key": "serviceheader",
+									"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}"
+								},
+								{
+									"key": "system",
+									"value": "MW"
+								},
+								{
+									"key": "user-agent",
+									"value": "PostmanRuntime/7.37.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 08:35:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"GetCustomerPFAResponse\": {\n        \"fault\": {\n            \"number\": 1,\n            \"description\": \"Incorrect value shortCIF length not equal to 8\",\n            \"system\": \"MW\",\n            \"nativeError\": \"\",\n            \"nativeDescription\": \"\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
