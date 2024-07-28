@@ -59,7 +59,7 @@ public class GetCustomerPFAService {
 	 * Prepare final response by mapping the retrieved response from the external api
 	 * 
 	 * @param ex Exchange body
-	 * @return GetCustomerPFA class Response
+	 * @return GetCustomerPFA class
 	 * @throws Exception
 	 */
 	public GetCustomerPFA prepareGetCustomerPFAFinalResponse(Exchange ex) throws Exception{

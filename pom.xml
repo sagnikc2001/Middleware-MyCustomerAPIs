@@ -147,7 +147,7 @@
 				</configuration>
 			</plugin>
 
-		<!--	<plugin>
+		<!--<plugin>
 				<groupId>org.jsonschema2pojo</groupId>
 				<artifactId>jsonschema2pojo-maven-plugin</artifactId>
 				<version>0.4.34</version>
@@ -161,7 +161,7 @@
 							<sourceDirectory>${project.basedir}/src/main/resources/schema/backend</sourceDirectory>
 
 							<targetPackage>
-								com.alahli.middleware.customer.models.backends</targetPackage>
+								com.alahli.middleware.customer.models.backends.ods</targetPackage>
 							<sourceType>json</sourceType>
 						</configuration>
 						<goals>
@@ -169,8 +169,8 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
--->		</plugins>
+			</plugin>-->
+		</plugins>
 	</build>
 
 </project>

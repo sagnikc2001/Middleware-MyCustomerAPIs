@@ -1,0 +1,13 @@
+{
+	"CustomerInformationRequest": {
+		"searchOption": "",
+		"cif": "",
+		"phinenoPhoneNumber": "",
+		"branchNumber": "",
+		"identificationNumber": 0,
+		"accountNumber": "",
+		"firstName": "",
+		"lastName": "",
+		"emailAddress": ""
+	}
+}

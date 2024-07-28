@@ -1,0 +1,13 @@
+{
+	"CustomerInformationRequest": {
+		"searchOption": "CIF",
+		"cif": "7654321",
+		"phinenoPhoneNumber": "9876543292",
+		"branchNumber": "BN002",
+		"identificationNumber": 12345689,
+		"accountNumber": "ACCT997654321",
+		"firstName": "Tim",
+		"lastName": "Jones",
+		"emailAddress": "timjones@gmail.com"
+	}
+}

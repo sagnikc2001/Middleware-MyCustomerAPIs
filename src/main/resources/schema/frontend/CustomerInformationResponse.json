@@ -1,0 +1,9 @@
+{
+	"CustomerInformationResponse": {
+		"success": {
+			"partyId": "string",
+			"partyNumber": 0,
+			"partyName": "string"
+		}
+	}
+}

@@ -684,6 +684,306 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "GetCustomerInformation",
+			"item": [
+				{
+					"name": "GetCustomerInformation_Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "ServiceHeader",
+								"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"CustomerInformationRequest\": {\r\n    \"searchOption\": \"CIF\",\r\n    \"cif\": \"7654321\",\r\n    \"phinenoPhoneNumber\": \"9876543292\",\r\n    \"branchNumber\": \"BN002\",\r\n    \"identificationNumber\": 12345689,\r\n    \"accountNumber\": \"ACCT997654321\",\r\n    \"firstName\": \"Tim\",\r\n    \"lastName\": \"Jones\",\r\n    \"emailAddress\": \"timjones@gmail.com\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/v1/GetCustomerInformation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"v1",
+								"GetCustomerInformation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCustomerInformation_Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ServiceHeader",
+										"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerInformationRequest\": {\r\n    \"searchOption\": \"CIF\",\r\n    \"cif\": \"7654321\",\r\n    \"phinenoPhoneNumber\": \"9876543292\",\r\n    \"branchNumber\": \"BN002\",\r\n    \"identificationNumber\": 12345689,\r\n    \"accountNumber\": \"ACCT997654321\",\r\n    \"firstName\": \"Tim\",\r\n    \"lastName\": \"Jones\",\r\n    \"emailAddress\": \"timjones@gmail.com\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/v1/GetCustomerInformation",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"v1",
+										"GetCustomerInformation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"GetCustomerInformationResponse\": {\n        \"success\": {\n            \"PARTYID\": \"PID12348\",\n            \"PARTYNUMBER\": \"987655321\",\n            \"PARTYNAME\": \"Tim Jones Corp\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetCustomerInformation_Fault",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "ServiceHeader",
+								"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"CustomerInformationRequest\": {\r\n    \"searchOption\": \"CIF\",\r\n    \"cif\": \"7652321\",\r\n    \"phinenoPhoneNumber\": \"9876543295\",\r\n    \"branchNumber\": \"BN009\",\r\n    \"identificationNumber\": 12345680,\r\n    \"accountNumber\": \"ACCT997654322\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Edwards\",\r\n    \"emailAddress\": \"johnedwards@gmail.com\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/v1/GetCustomerInformation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"v1",
+								"GetCustomerInformation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCustomerInformation_Fault",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ServiceHeader",
+										"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CustomerInformationRequest\": {\r\n    \"searchOption\": \"CIF\",\r\n    \"cif\": \"7652321\",\r\n    \"phinenoPhoneNumber\": \"9876543295\",\r\n    \"branchNumber\": \"BN009\",\r\n    \"identificationNumber\": 12345680,\r\n    \"accountNumber\": \"ACCT997654322\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Edwards\",\r\n    \"emailAddress\": \"johnedwards@gmail.com\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/v1/GetCustomerInformation",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"v1",
+										"GetCustomerInformation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"CustomerInformationResponse\": {\r\n        \"fault\": {\r\n            \"number\": 30,\r\n            \"description\": \"Record not found\",\r\n            \"system\": \"ODS\",\r\n            \"nativeError\": \"\",\r\n            \"nativeDescription\": \"\"\r\n        }\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "GetCustomerInformation_EmailAddress_Validation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "ServiceHeader",
+								"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"CustomerInformationRequest\": {\r\n\t\t\"searchOption\": \"\",\r\n\t\t\"cif\": \"\",\r\n\t\t\"phinenoPhoneNumber\": \"\",\r\n\t\t\"branchNumber\": \"\",\r\n\t\t\"identificationNumber\": 0,\r\n\t\t\"accountNumber\": \"\",\r\n\t\t\"firstName\": \"\",\r\n\t\t\"lastName\": \"\",\r\n\t\t\"emailAddress\": \"\"\r\n\t}\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/customer/v1/GetCustomerInformation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"v1",
+								"GetCustomerInformation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCustomerInformation_EmailAddress_Validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ServiceHeader",
+										"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"CustomerInformationRequest\": {\r\n\t\t\"searchOption\": \"\",\r\n\t\t\"cif\": \"\",\r\n\t\t\"phinenoPhoneNumber\": \"\",\r\n\t\t\"branchNumber\": \"\",\r\n\t\t\"identificationNumber\": 0,\r\n\t\t\"accountNumber\": \"\",\r\n\t\t\"firstName\": \"\",\r\n\t\t\"lastName\": \"\",\r\n\t\t\"emailAddress\": \"\"\r\n\t}\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/v1/GetCustomerInformation",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"v1",
+										"GetCustomerInformation"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "accept",
+									"value": "*/*"
+								},
+								{
+									"key": "accept-encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "postman-token",
+									"value": "507ee5b7-528c-4497-99f3-8033f6348548"
+								},
+								{
+									"key": "serviceheader",
+									"value": "{\"tellerId\": \"T123\",\"branchId\": \"B001\",\"channelId\": \"WEB\"}"
+								},
+								{
+									"key": "system",
+									"value": "MW"
+								},
+								{
+									"key": "user-agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jul 2024 13:14:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"CustomerInformationResponse\": {\n        \"fault\": {\n            \"number\": 1,\n            \"description\": \"Incorrect value Not a valid request\",\n            \"system\": \"MW\",\n            \"nativeError\": \"\",\n            \"nativeDescription\": \"\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
 		}
 	]
 }

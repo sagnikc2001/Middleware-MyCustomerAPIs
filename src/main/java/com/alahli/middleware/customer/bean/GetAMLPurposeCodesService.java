@@ -40,7 +40,7 @@ public class GetAMLPurposeCodesService {
 
 	/**
 	 * 
-	 * @param getAMLPurposeCodesRequestType
+	 * @param GetAMLPurposeCodes class
 	 * @param serviceHeader
 	 * @throws Exception
 	 */
@@ -76,7 +76,7 @@ public class GetAMLPurposeCodesService {
 	 * Prepare final response by mapping the retrieved response from the external api
 	 * 
 	 * @param ex Exchange body
-	 * @return JsonNode for the AMLPurposeCodes Response
+	 * @return AMLPurposeCodes class
 	 * @throws Exception
 	 */
 	public GetAMLPurposeCodes prepareGetAMLPurposeCodesFinalResponse(Exchange ex) throws Exception {

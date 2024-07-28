@@ -1,0 +1,13 @@
+{
+	"CustomerInformationRequest": {
+		"searchOption": "CIF",
+		"cif": "90290961568866",
+		"phinenoPhoneNumber": "string",
+		"branchNumber": "string",
+		"identificationNumber": 0,
+		"accountNumber": "SA4367HLKFJpTief23tube4F",
+		"firstName": "string",
+		"lastName": "string",
+		"emailAddress": "IlzRAy9uhMyuS.fxQCLIQK1P91BaVWIrGsswXGUcKyhVs.cAumk1@[255.250.234.255]"
+	}
+}

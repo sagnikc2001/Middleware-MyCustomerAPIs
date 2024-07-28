@@ -17,8 +17,10 @@ public class GetAMLPurposeCodesRequest {
 
     @JsonProperty("channelId")
     private String channelId;
+    
     @JsonProperty("transactionType")
     private String transactionType;
+    
     @JsonProperty("customerType")
     private String customerType;
 

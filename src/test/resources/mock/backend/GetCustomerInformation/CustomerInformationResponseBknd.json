@@ -1,0 +1,9 @@
+{
+	"GetCustomerInformationResponse": {
+		"success": {
+			"PARTYID": "PID12348",
+			"PARTYNUMBER": "987655321",
+			"PARTYNAME": "Tim Jones Corp"
+		}
+	}
+}
